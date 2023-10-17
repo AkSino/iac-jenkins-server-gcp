@@ -1,0 +1,14 @@
+---
+# vars file for jenkins
+javaUbuntu: "openjdk-17-jre"
+reposUbuntu:
+ jenkins:
+    jenkins_source_list: "/etc/apt/sources.list.d/jenkins.list"
+    url: "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/"
+softwaresUbuntu:
+ java:
+    name: "{{ javaUbuntu }}"
+ jenkins:
+    name: "jenkins"
+jenkins_key_rpmUbuntu: "https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key"
+jenkins_key_rpmUbuntu_dest: "/usr/share/keyrings/jenkins-keyring.asc"

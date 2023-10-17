@@ -1,0 +1,17 @@
+---
+# tasks file for jenkins
+- name: using UBUNTU file
+  include_tasks: ubuntu.yml
+  when: ansible_distribution == "Ubuntu"
+
+- name: sleep for 30 seconds and continue with play
+  wait_for: timeout=30
+
+- name: Init password jenkins
+  shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+  changed_when: false
+  register: result
+
+- name: print init password jenkins
+  debug:
+    var: result.stdout
