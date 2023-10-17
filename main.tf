@@ -17,7 +17,7 @@ module "jenkins_instances" {
   instance_tags           = ["jenkins-server"]
   instance_startup_script = "apt-get install -y python"
   machine_type            = "e2-small"
-  linux_type_instance       = "jenkins"
+  linux_type_instance     = "jenkins"
   instance_image          = "ubuntu-2204-jammy-v20230919"
   gcp_zone                = var.gcp_zone
   network_id              = module.network.network_id
